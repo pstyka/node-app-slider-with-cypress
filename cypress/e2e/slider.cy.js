@@ -16,3 +16,14 @@ describe('Swiper Gallery Test', function () {
     cy.get('.swiper-slide-active').should('contain', 'Paris');
   });
 });
+
+describe('Swiper Gallery Test', function () {
+  it('Verifies that the first slide is Rome and the second is London', function () {
+    cy.visit('http://localhost:3000');
+    cy.get('.swiper-slide-active').should('contain', 'Rome');
+    cy.wait(2000);
+    cy.get('.swiper-button-next').click();
+    cy.wait(2000);
+    cy.get('.swiper-slide-active').should('contain', 'London');
+  });
+});
